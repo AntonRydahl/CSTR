@@ -12,7 +12,7 @@ CFLAGS= $(WARN) $(DEFS) $(OPT) $(PIC) $(XOPTS)
 LDFLAGS=-lm -fopenmp #-llapack -lblas
 
 SOFLAGS = -shared 
-XLIBS	= -L /usr/lib64/atlas -lsatlas
+XLIBS	= -L /usr/lib64/atlas -lsatlas -L /opt/intel/lapack-3.2.1 -llapack -lblas
 
 $(TARGET): $(LIBOBJS)
 	$(CC) -o $@ $(SOFLAGS) $(LIBOBJS) $(XLIBS) $(LDFLAGS)
