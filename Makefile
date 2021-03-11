@@ -4,12 +4,12 @@ LIBOBJS	= MersenneTwister.o RandomProcesses.o CSTR.o ImplicitEulerSolver.o
 
 OPT	= -g -O3 -funroll-all-loops -march=broadwell
 PIC	= -fPIC
-
+DEFS	= -fopenmp
 CC	= gcc
-CFLAGS= $(OPT) $(PIC) $(XOPTS)
+CFLAGS= $(DEFS) $(OPT) $(PIC) $(XOPTS)
 
 SOFLAGS = -shared 
-XLIBS	= -L /usr/lib64/atlas -lsatlas
+XLIBS	= -lblas -llapack
 
 $(TARGET): $(LIBOBJS)
 	$(CC) -o $@ $(SOFLAGS) $(LIBOBJS) $(XLIBS)
