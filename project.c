@@ -157,8 +157,7 @@ int main(int argc, char *argv[]){
     int thread_index, number_of_threads, thread_points, thread_start;
     
     // Starting timing
-    struct timespec start, end;
-    clock_gettime(CLOCK_REALTIME, &start);
+    double timer = omp_get_wtime();
     
     #pragma omp parallel default(shared) private(thread_index,\
     number_of_threads, thread_points, thread_start)
@@ -195,10 +194,8 @@ int main(int argc, char *argv[]){
     }
     
     // Finishing timing
-    clock_gettime(CLOCK_REALTIME, &end);
-    long micros = (((end.tv_sec - start.tv_sec) * 1000000) + end.tv_nsec) - (start.tv_nsec);
-    double seconds = ((double) end.tv_sec - start.tv_sec)+((double) micros / 1e9);
-    printf("%lf\n", seconds);
+    timer = omp_get_wtime()-timer;
+    printf("%lf\n", timer);
     
     
     FILE* X_file;
