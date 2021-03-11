@@ -7,7 +7,7 @@ PIC	= -fPIC
 DEFS	= -fopenmp ##-llapack -lblas
 CC	= gcc
 WARN	= -Wall
-CFLAGS= $(DEFS) $(WARN) $(OPT) $(PIC) $(XOPTS)
+CFLAGS= $(WARN) $(DEFS) $(OPT) $(PIC) $(XOPTS)
 
 LDFLAGS = -lm
 
