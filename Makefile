@@ -4,7 +4,7 @@ LIBOBJS	= MersenneTwister.o RandomProcesses.o CSTR.o ImplicitEulerSolver.o
 
 OPT	= -g -O3 -funroll-all-loops -march=native
 PIC	= -fPIC
-DEFS	= -fopenmp ##-llapack -lblas
+DEFS	= -fopenmp -llapack -lblas
 CC	= gcc
 WARN	= -Wall
 CFLAGS= $(WARN) $(DEFS) $(OPT) $(PIC) $(XOPTS)
