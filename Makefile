@@ -3,16 +3,19 @@
 default: project
 
 CC = gcc
-CFLAGS = -std=c11 -Wall -O3 -ftree-vectorize -march=native -funroll-all-loops
 
 INCLUDES = -I.
 OBJS = MersenneTwister.o RandomProcesses.o CSTR.o ImplicitEulerSolver.o
 
-LAPACKBLAS_PATH = /zhome/0e/2/36189/teaching/02616/2019/libraries/lib
-LAPACKBLAS_LIBS = -L$(LAPACKBLAS_PATH) -llapack -lblas
-
 # Gather the full list of libraries for the linker line
-LIBS = $(LAPACKBLAS_LIBS) -fopenmp
+LIBS = $(LAPACKBLAS_LIBS)
+DEFS = -fopenmp -llapack -lblas
+OPT = -O3 -ftree-vectorize -march=native -funroll-all-loops
+WARN = -Wall
+CFLAGS = $(DEFS) -std=c11 $(WARN) $(OPT)
+
+SOFLAGS = -shared 
+XLIBS	= -L /usr/lib64/atlas -lsatlas
 
 _DIST_HEADERS = MersenneTwister.h RandomProcesses.h CSTR.h ImplicitEulerSolver.h
 
@@ -28,7 +31,7 @@ CSTR.o: CSTR.c $(_DIST_HEADERS)
 ImplicitEulerSolver.o: ImplicitEulerSolver.c $(_DIST_HEADERS)
 	$(CC) -c $< $(INCLUDES) $(CFLAGS)
 
-project: project.o $(OBJS)
+project: project.o $(SOFLAGS) $(OBJS) $(XLIBS)
 	$(CC) -o $@ $^ $(LIBS)
 
 clean:
