@@ -4,18 +4,18 @@ LIBOBJS	= MersenneTwister.o RandomProcesses.o CSTR.o ImplicitEulerSolver.o
 
 OPT	= -g -O3 -funroll-all-loops -march=native
 PIC	= -fPIC
-DEFS	= #-fopenmp ##-llapack -lblas
+DEFS	= -fopenmp ##-llapack -lblas
 CC	= gcc
 WARN	= -Wall
 CFLAGS= $(WARN) $(DEFS) $(OPT) $(PIC) $(XOPTS)
 
-LDFLAGS=-lm -fopenmp #-llapack -lblas
+#LDFLAGS=-lm -fopenmp #-llapack -lblas
 
 SOFLAGS = -shared 
-XLIBS	= -L /usr/lib64/atlas -lsatlas -L /opt/intel/lapack-3.2.1 -llapack -lblas
+XLIBS	= -L /usr/lib64/atlas -lsatlas -L /opt/intel/lapack-3.2.1 #-llapack -lblas
 
 $(TARGET): $(LIBOBJS)
-	$(CC) -o $@ $(SOFLAGS) $(LIBOBJS) $(XLIBS) $(LDFLAGS)
+	$(CC) -o $@ $(SOFLAGS) $(LIBOBJS) $(XLIBS)
 .PHONY:
 clean:
 	@/bin/rm -f core core.* $(LIBOBJS) 
