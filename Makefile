@@ -31,7 +31,7 @@ ImplicitEulerSolver.o: ImplicitEulerSolver.c $(_DIST_HEADERS)
 	$(CC) -c $< $(INCLUDES) $(CFLAGS)
 
 project: project.o $(OBJS) $(XLIBS)
-	$(CC) -o $@ $^ $(SOFLAGS) $(XLIBS)
+	$(CC) -o $@ $^ $(SOFLAGS) $(XLIBS) 
 
 clean:
 	rm -f *.o project
