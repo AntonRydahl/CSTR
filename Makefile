@@ -6,7 +6,8 @@ OPT	= -g -O3 -funroll-all-loops -march=native
 PIC	= -fPIC
 DEFS	= -fopenmp
 CC	= gcc
-CFLAGS= $(DEFS) $(OPT) $(PIC) $(XOPTS)
+WARN	= -Wall
+CFLAGS= $(DEFS) $(WARN) $(OPT) $(PIC) $(XOPTS)
 
 LDFLAGS = -lm 
 
