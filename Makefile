@@ -11,7 +11,7 @@ CFLAGS= $(DEFS) $(OPT) $(PIC) $(XOPTS)
 LDFLAGS = -lm 
 
 SOFLAGS = -shared 
-XLIBS	= -L /usr/lib64/atlas -lsatlas -lblas -llapack
+XLIBS	= -L /usr/lib64/atlas -lsatlas #-lblas -llapack
 
 $(TARGET): $(LIBOBJS)
 	$(CC) -o $@ $(SOFLAGS) $(LIBOBJS) $(XLIBS)
