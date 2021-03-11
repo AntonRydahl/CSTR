@@ -23,9 +23,8 @@
 #	@/bin/rm -f core core.* $(LIBOBJS) 
 	
 CXX=gcc #Chooses c compiler
-CFLAGS= -Werror -fsanitize=address -g
 CFLAGS= -std=c11 -Wall #compiler flags
-LDLIBS=  MersenneTwister.c RandomProcesses.c CSTR.c ImplicitEulerSolver.c -lblas -lm -llapack -fopenmp#library flags
+LDLIBS=  MersenneTwister.c RandomProcesses.c CSTR.c ImplicitEulerSolver.c -lm -fopenmp#library flags
 LINK.o=$(CXX) $(LDFLAGS) -L /usr/lib64/atlas -lsatlas #Makes shure to compile with the object library
 
 ### Insert targets and prerequisites below
