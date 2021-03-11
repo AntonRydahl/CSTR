@@ -9,7 +9,7 @@ CC	= gcc
 WARN	= -Wall
 CFLAGS= $(WARN) $(DEFS) $(OPT) $(PIC) $(XOPTS)
 
-LDFLAGS=-lm -fopenmp -llapack#-lblas
+LDFLAGS=-lm -fopenmp #-llapack -lblas
 
 SOFLAGS = -shared 
 XLIBS	= -L /usr/lib64/atlas -lsatlas
