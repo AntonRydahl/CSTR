@@ -8,6 +8,8 @@ DEFS	= -fopenmp
 CC	= gcc
 CFLAGS= $(DEFS) $(OPT) $(PIC) $(XOPTS)
 
+LDFLAGS = -lm 
+
 SOFLAGS = -shared 
 XLIBS	= -lblas -llapack
 
