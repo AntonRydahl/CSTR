@@ -8,7 +8,6 @@ INCLUDES = -I.
 OBJS = MersenneTwister.o RandomProcesses.o CSTR.o ImplicitEulerSolver.o
 
 # Gather the full list of libraries for the linker line
-LIBS = $(LAPACKBLAS_LIBS)
 DEFS = -fopenmp -llapack -lblas
 OPT = -O3 -ftree-vectorize -march=native -funroll-all-loops
 WARN = -Wall
@@ -31,8 +30,8 @@ CSTR.o: CSTR.c $(_DIST_HEADERS)
 ImplicitEulerSolver.o: ImplicitEulerSolver.c $(_DIST_HEADERS)
 	$(CC) -c $< $(INCLUDES) $(CFLAGS)
 
-project: project.o $(SOFLAGS) $(OBJS) $(XLIBS)
-	$(CC) -o $@ $^ $(LIBS)
+project: project.o $(OBJS) $(XLIBS)
+	$(CC) -o $@ $^ $(SOFLAGS) $(XLIBS)
 
 clean:
 	rm -f *.o project
