@@ -180,7 +180,7 @@ int main(int argc, char *argv[]){
             f_func,
             g_func,
             J_func,
-            pflow_rate, //pu,  // for storing closed loop input profiles
+            pflow_rate, //pu, for storing closed loop input profiles
             pd,
             pP,
             thread_points,
