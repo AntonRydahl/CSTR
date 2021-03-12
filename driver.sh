@@ -9,7 +9,7 @@ fi
 
 make clean
 make
-./parallel_driver $1
+./project $1
 export MYHOME=`pwd`
 echo $MYHOME
 VAR1="/driver.m"
