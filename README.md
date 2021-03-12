@@ -7,7 +7,7 @@ The simulations in this example are run in parallel using the Open Multi-process
 
 Getting Started
 ---------------
-Start out by navigating to <https://thinlinc.gbar.dtu.dk/main/>. In the top left corner, click *Applications* and select *DTU*. In order to get the result nicely displayed, open *xterm (VirtualGL-application-node)*.
+Start out by navigating to <https://thinlinc.gbar.dtu.dk/main/>. In the top left corner, click *Applications* and select *DTU*. In order to get the result nicely displayed, open *xterm (VirtualGL-application-node)*. If you choose to use another terminal on thinlinc, the Matlab driver will not work and the results will not be displayed.
 
 Create a new directory where you can run the code. For instance, type
 ```
