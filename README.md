@@ -30,7 +30,7 @@ You are now ready to run the example. In your folder you now have libraries cont
 
 The folder also contains a Matlab driver to illustrate the results.
 
-Commands to Run the Example
+Commands to Run the Driver
 ---------------------------
 The driver can be executed with the command:
 ```
@@ -39,6 +39,6 @@ The driver can be executed with the command:
 
 Expected Result
 ---------------
-The C function *parallel_driver.c* will compute a user specified number of realisations of model noise and simulate the model for the different realisations of noise. Afterwards the Matlab driver *driver.m* illustrates the solution.
+The C function *project.c* will compute a user specified number of realisations of model noise and simulate the model for the different realisations of noise. Afterwards the Matlab driver *driver.m* illustrates the solution.
 
-![alt text](https://github.com/AntonRydahl/CSTR/implicit_explicit.png) 
+![alt text](https://github.com/AntonRydahl/CSTR/blob/main/implicit_explicit.png) 
