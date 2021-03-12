@@ -9,7 +9,7 @@ INCLUDES = -I.
 OBJS = MersenneTwister.o RandomProcesses.o
 OBJS += ImplicitEulerSolver.o CSTR.o
 
-LIBS = -lm -fopenmp -llapack -L/usr/lib64/atlas -lsatlas
+LIBS = -lm -fopenmp -L/usr/lib64/atlas -lsatlas
 
 _DIST_HEADERS = MersenneTwister.h RandomProcesses.h ImplicitEulerSolver.h CSTR.h
 
