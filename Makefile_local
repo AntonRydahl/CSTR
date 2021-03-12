@@ -1,0 +1,14 @@
+CXX=gcc #Chooses c compiler
+CFLAGS= -std=c11 -Wall #compiler flags
+LDLIBS=  MersenneTwister.c RandomProcesses.c CSTR.c ImplicitEulerSolver.c -lm -fopenmp -llapack #library flags
+LINK.o=$(CXX) $(LDFLAGS) #-L /usr/lib64/atlas -lsatlas #Makes sure to compile with the object library
+
+### Insert targets and prerequisites below
+# target: prerequisites
+
+all: project
+
+.PHONY: clean
+clean:
+		-$(RM) *.o
+		-$(RM) project
