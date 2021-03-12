@@ -1,8 +1,9 @@
 Parallel Implementation of the CSTR Model
 =========================================
 This example demonstrates how to simulate the model dynamics of the Continuous Stirred Tank Reactor model for an example input profile.
-This code implements the model given in the paper <a href="https://orbit.dtu.dk/en/publications/nonlinear-model-predictive-control-for-an-exothermic-reaction-in-">Nonlinear Model Predictive Control for an Exothermic Reaction in an Adiabatic CSTR</a>
-The simulations are run in parallel using the Open Multi-processin (OpenMP).
+This code implements the model given in the paper <a href="https://orbit.dtu.dk/en/publications/nonlinear-model-predictive-control-for-an-exothermic-reaction-in-">Nonlinear Model Predictive Control for an Exothermic Reaction in an Adiabatic CSTR</a>.
+
+The simulations in this example are run in parallel using the Open Multi-processin (OpenMP).
 
 Getting Started
 ---------------
@@ -25,9 +26,9 @@ and navigate to the downloaded files
 ```
 cd cstr
 ```
-You are now ready to run the example. In your folder you now have libraries containing a random number generator, *Mersenne Twister*, an implicit first order ODE solver, *Implicit Euler* and a library for generating a scalar Standard Wiener Process.
+You are now ready to run the example. In your folder you now have libraries containing a random number generator, *Mersenne Twister*, an implicit first order ODE solver, *Implicit Euler* and a library for generating a scalar Standard Wiener Process. The Newton solver uses in the Implicit Euler method uses LAPACK. You can eventually take a look at the makefile to see how the Fortran version of LAPACK can be used. 
 
-The folder also contains a Makefile for the project and a Matlab driver to illustrate the results.
+The folder also contains a Matlab driver to illustrate the results.
 
 Commands to Run the Example
 ---------------------------
