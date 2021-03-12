@@ -71,7 +71,10 @@ int main(int argc, char *argv[]){
     unsigned long *pworkspace_ul = (unsigned long*) malloc(624*sizeof(unsigned long));
 
     // Allocating memory for the implicit-explicit Euler scheme for vector drift
-    int max_num_threads = 8;
+    int max_num_threads = 1;
+    #if defined(_OPENMP)
+    	max_num_threads = omp_get_max_threads();
+    #endif
     double *pworkspace_lf = (double*) malloc(max_num_threads*(5+2*n)*n*sizeof(double));
 
     // Allocating memory for DGESV
@@ -168,6 +171,7 @@ int main(int argc, char *argv[]){
         if (thread_index == number_of_threads-1){
             thread_points = NS - thread_start;
         }
+        printf("Thread %d simulating experiment %d to %d\n",thread_index,thread_start,thread_start+number_of_threads);
         implicit_simulation(
             pT,
             &pX[thread_start*size_x],
