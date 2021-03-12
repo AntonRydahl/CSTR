@@ -9,6 +9,7 @@ fi
 
 make clean
 make
+export OMP_NUM_THREADS=20
 ./project $1
 export MYHOME=`pwd`
 echo $MYHOME
