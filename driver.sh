@@ -9,7 +9,7 @@ fi
 
 make clean
 make
-export OMP_NUM_THREADS=20
+export OMP_NUM_THREADS=4
 ./project $1
 export MYHOME=`pwd`
 echo $MYHOME
@@ -17,6 +17,6 @@ VAR1="/driver.m"
 VAR2="$MYHOME$VAR1"
 echo "Executing file on path:"
 echo $VAR2
-matlab -nodesktop -sd $MYHOME -r "driver($1);pause(10);exit;"
+matlab -nodesktop -sd $MYHOME -r "driver($1);pause(5);exit;"
 
 rm *.txt
