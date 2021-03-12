@@ -5,7 +5,7 @@ CC = gcc
 
 CFLAGS = -O3 -ftree-vectorize -march=native -funroll-all-loops
 
-WARN = -Wall
+WARN = -Wall -fopenmp
 
 OBJS = MersenneTwister.o RandomProcesses.o
 OBJS += ImplicitEulerSolver.o CSTR.o
