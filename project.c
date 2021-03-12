@@ -159,8 +159,7 @@ int main(int argc, char *argv[]){
     // Starting timing
     double timer = omp_get_wtime();
     
-    #pragma omp parallel default(shared) private(thread_index,\
-    number_of_threads, thread_points, thread_start)
+    #pragma omp parallel default(shared) private(thread_index,number_of_threads, thread_points, thread_start)
     {   
         thread_index = omp_get_thread_num();
         number_of_threads =  omp_get_num_threads();

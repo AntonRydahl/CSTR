@@ -3,7 +3,7 @@ default: $(TARGET)
 
 CC = gcc
 
-CFLAGS = -O3 -ftree-vectorize -march=native -funroll-all-loops
+CFLAGS = -O3 -march=native
 
 WARN = -Wall
 
