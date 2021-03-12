@@ -34,7 +34,7 @@ Commands to Run the Example
 ---------------------------
 The driver can be executed with the command:
 ```
-$ ./driver.sh <number of realisations> <number of threads>
+./driver.sh <number of realisations> <number of threads>
 ```
 
 Expected Result
