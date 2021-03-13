@@ -1,5 +1,6 @@
 Parallel Implementation of the CSTR Model
 =========================================
+![alt text](https://github.com/AntonRydahl/CSTR/blob/main/CSTR.png)
 This example demonstrates how to simulate the model dynamics of the Continuous Stirred Tank Reactor model for an example input profile.
 This code implements the model given in the paper <a href="https://orbit.dtu.dk/en/publications/nonlinear-model-predictive-control-for-an-exothermic-reaction-in-">Nonlinear Model Predictive Control for an Exothermic Reaction in an Adiabatic CSTR</a>.
 
@@ -7,7 +8,7 @@ The simulations in this example are run in parallel using the Open Multi-process
 
 Getting Started
 ---------------
-Start out by navigating to <https://thinlinc.gbar.dtu.dk/main/>. In the top left corner, click *Applications* and select *DTU*. In order to get the result nicely displayed, open *xterm (VirtualGL-application-node)*. If you choose to use another terminal on thinlinc, the Matlab driver will not work and the results will not be displayed.
+Start out by navigating to <https://thinlinc.gbar.dtu.dk/main/>. In the top left corner, click *Applications* and select *DTU*. In order to get the result nicely displayed, open *xterm (VirtualGL-application-node)*. If you choose to use another terminal on Thinlinc, the Matlab driver will not work and the results will not be displayed.
 
 Create a new directory where you can run the code. For instance, type
 ```
@@ -26,7 +27,7 @@ and navigate to the downloaded files
 ```
 cd cstr
 ```
-You are now ready to run the example. In your folder you now have libraries containing a random number generator, *Mersenne Twister*, an implicit first order ODE solver, *Implicit Euler* and a library for generating a scalar Standard Wiener Process. The Newton solver uses in the Implicit Euler method uses LAPACK. You can eventually take a look at the makefile to see how the Fortran version of LAPACK can be used. 
+You are now ready to run the example. In your folder you have libraries containing a random number generator, *Mersenne Twister*, an implicit first order ODE solver, *Implicit Euler*, and a library for generating a scalar Standard Wiener Process. The Newton solver uses in the Implicit Euler method uses LAPACK. You can eventually take a look at the *Makefile* to see how the Fortran version of LAPACK can be used on Thinlinc. 
 
 The folder also contains a Matlab driver to illustrate the results.
 
@@ -39,6 +40,6 @@ The driver can be executed with the command:
 
 Expected Result
 ---------------
-The C function *project.c* will compute a user specified number of realisations of model noise and simulate the model for the different realisations of noise. Afterwards the Matlab driver *driver.m* illustrates the solution.
+The C function *project.c* will compute a user specified number of realisations of model noise and simulate the model in open loop for the different realisations of noise. Afterwards, the Matlab driver *driver.m* illustrates the solution.
 
 ![alt text](https://github.com/AntonRydahl/CSTR/blob/main/implicit_explicit.png) 
