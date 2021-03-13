@@ -18,6 +18,4 @@ VAR1="/driver.m"
 VAR2="$MYHOME$VAR1"
 echo "Executing file on path:"
 echo $VAR2
-matlab -nodesktop -sd $MYHOME -r "driver($1);pause(5);exit;"
-
-rm *.txt
+matlab -nodesktop -nosplash -sd $MYHOME -r "driver($1);cd figures;fig_2_pdf();exit;"

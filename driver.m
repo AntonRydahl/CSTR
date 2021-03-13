@@ -26,7 +26,7 @@ u = @(t,F)(F(floor(t)+1));
 % Plotting output
 
 dim = [2 2];
-figure('Renderer', 'painters', 'Position', [10 10 1500 1000])
+figure('visible','off','Renderer', 'painters', 'Position', [10 10 1500 1000])
 subplot(dim(1),dim(2),1)
 plot(T,X(1,:,1))
 hold on
@@ -69,8 +69,7 @@ title_str="Stochastic Solution to the CSTR Model";
 
 sgtitle(title_str,'fontsize',22)
 set(gca,'LooseInset',get(gca,'TightInset'));
-savefig(gcf,strcat([solverName,'.fig']))
-saveas(gcf,strcat([solverName,'.png']))
+savefig(gcf,strcat(['./figures/',solverName,'.fig']))
 
 end
 
