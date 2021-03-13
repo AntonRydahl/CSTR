@@ -1,6 +1,7 @@
 Parallel Implementation of the CSTR Model
 =========================================
-![alt text](https://github.com/AntonRydahl/CSTR/blob/main/CSTR.png =800x)
+
+<img src="https://github.com/AntonRydahl/CSTR/blob/main/CSTR.png" alt="drawing" width="800"/>
 
 This example demonstrates how to simulate the model dynamics of the Continuous Stirred Tank Reactor model for an example input profile.
 This code implements the model given in the paper <a href="https://orbit.dtu.dk/en/publications/nonlinear-model-predictive-control-for-an-exothermic-reaction-in-">Nonlinear Model Predictive Control for an Exothermic Reaction in an Adiabatic CSTR</a>.
