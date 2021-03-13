@@ -45,3 +45,5 @@ Expected Result
 The C function *project.c* will compute a user specified number of realisations of model noise and simulate the model in open loop for the different realisations of noise. Afterwards, the Matlab driver *driver.m* illustrates the solution.
 
 ![alt text](https://github.com/AntonRydahl/CSTR/blob/main/implicit_explicit.png) 
+<object data="https://github.com/AntonRydahl/CSTR/blob/main/figures/implicit_explicit.pdf" type="application/pdf" width="100%"> 
+</object>
