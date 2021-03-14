@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
     }
 
 
-    // One time step is 10 seconds
+    // One time step is 1 seconds
     int time_steps_per_sample = 60;
     
     // Sample time is one minute
