@@ -171,7 +171,7 @@ int main(int argc, char *argv[]){
         if (thread_index == number_of_threads-1){
             thread_points = NS - thread_start;
         }
-        printf("Thread %d simulating experiment %d to %d\n",thread_index,thread_start,thread_start+number_of_threads);
+        printf("Thread %d simulating experiment %d to %d\n",thread_index,thread_start,thread_start+thread_points);
         implicit_simulation(
             pT,
             &pX[thread_start*size_x],
